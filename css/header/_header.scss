@@ -1,0 +1,168 @@
+@mixin flex ($justify: space-between,$items: center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+}
+@mixin text ($clr: #FFF,$tt:capitalize,$fw: 600,$family: 'Rooboto',){
+    color: $clr;
+    text-transform: $tt;
+    font-weight: $fw;
+    font-family: $family,sans-serif;
+}
+
+header{
+    overflow-x: hidden;
+    nav{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        padding: 30px 0;
+        background-color:  hsl(0, 0%, 37%);
+        box-shadow: 0px 0px 50px 10px rgba(228, 227, 227, 0.671);
+        .container{
+            @include flex();
+            .logo{
+                @include text($tt:lowercase);
+            }
+            ul{
+                @include flex();
+                li{
+                    margin-left: 8vw;
+                    a{
+                        @include text();
+                        position: relative;
+                        overflow: hidden;
+                        padding: 5px 0;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            right: 100%;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #FFF;
+                            transition: all 0.5s linear;
+                        }
+                        &:hover::after{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 100%;
+                            width: 100%;
+                            height: 2px;
+                            background-color: #FFF;
+                            transition: all 0.5s linear;
+                        }
+                        &:hover::before{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 325px) {
+    header{
+        nav{
+            position: relative;
+            .container{             
+                ul{
+                    position: absolute;
+                    bottom: -125px;
+                    right: -100%;
+                    flex-direction: column;
+                    background-color: hsl(0, 0%, 37%);
+                    display: block;
+                    transition: all 0.5s linear;
+                    li{
+                        margin: 0 5vw 0 50px;
+                        a{
+                            color: #FFF;
+                        }
+                    }
+                }
+                #menu{
+                    display: block;
+                }
+                .block{
+                    position: absolute;
+                    bottom: -125px;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 325px) and (max-width: 576px) {
+    header{
+        nav{
+            position: relative;
+            .container{             
+                ul{
+                    position: absolute;
+                    bottom: -125px;
+                    right: -100%;
+                    flex-direction: column;
+                    background-color: hsl(0, 0%, 37%);
+                    display: block;
+                    transition: all 0.5s linear;
+                    li{
+                        margin: 0 5vw 0 50px;
+                        a{
+                            color: #FFF;
+                        }
+                    }
+                }
+                #menu{
+                    display: block;
+                }
+                .block{
+                    position: absolute;
+                    bottom: -125px;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    header{
+        nav{
+            position: relative;
+            .container{             
+                ul{
+                    position: absolute;
+                    bottom: -125px;
+                    right: -100%;
+                    flex-direction: column;
+                    background-color: hsl(0, 0%, 37%);
+                    display: block;
+                    transition: all 0.5s linear;
+                    li{
+                        margin: 0 5vw 0 50px;
+                        a{
+                            color: #FFF;
+                        }
+                    }
+                }
+                #menu{
+                    display: block;
+                }
+                .block{
+                    position: absolute;
+                    bottom: -125px;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
